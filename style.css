@@ -1,0 +1,226 @@
+/* Frank Wu
+7/12/23
+Section AD Tara
+
+css file styles all the elements in the index.html file */
+:root {
+  --color-light: #F7F5ED;
+  --color-mid: #FFBF9B;
+  --color-highlight: #B46060;
+  --color-dark: #5e5e5e;
+  --: 'Noto Serif JP', serif;
+}
+body {
+  margin: 0px;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+.black-background {
+  background-color: #1c1c1f;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family:var(--mainFont);
+  font-weight: 500;
+}
+
+#about-me,
+#work,
+#skills {
+  margin: auto;
+  width: 80%;
+}
+
+#work,
+#hobbies {
+  /* padding-top: 15vh; */
+}
+
+#work,
+#skills,
+#hobbies {
+  padding-bottom: 15vh;
+}
+
+#work > section,
+#hobbies > section,
+#about-me,
+#skills > section {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+#about-me-text {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+#about-me {
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+}
+
+#about-me h2 {
+  margin-top: 0px;
+}
+
+#about-me img {
+  height: 500px;
+  margin: 50px;
+  border-radius: 10px;
+}
+
+header {
+  background-image: url("img/wushuportait-4.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  /* margin: 0; */
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  /* color: #d5b9b2; */
+  color: var(--color-mid);
+  font-family: var(--mainFont);
+  font-size: 40px;
+  text-shadow: 1px 1px 5px #000000;
+}
+
+#work > section > section,
+#skills > section > section {
+  padding: 40px;
+  width: 33%;
+  background-color: #cebebe;
+  margin: 50px;
+  border-radius: 3px;
+}
+
+#work > section > section{
+  width: 40%;
+}
+
+#work > section > section > img{
+  width: 30%;
+}
+
+#work-section,
+#skills > section > section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+
+#hobbies > section > section {
+  width: 40%;
+  align-items: center;
+  background-color: #cebebe;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  transition-duration: 0.4s;
+}
+
+#hobbies > section > section > img {
+  width: 100%;
+  transition-duration: 0.4s;
+}
+
+#hobbies > section > section > section {
+  padding: 7%;
+  width: 86%;
+  align-items: center;
+  /* background-color: #cebebe; */
+  display: flex;
+  flex-direction: column;
+  transition-duration: 0.4s;
+}
+
+#hobbies > section {
+  flex-direction: column;
+  align-items: center;
+}
+
+#hobbies img {
+  width: 100%;
+}
+
+h2 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--color-highlight);
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 10px ;
+  /* color: var(--color-highlight); */
+}
+
+p {
+  font-size: 1.3rem;
+  font-family: var(--mainFont);
+}
+
+iframe {
+  width: 640px;
+  height: 360px;
+  border: 0px;
+}
+
+#hobbies > section > .make-wider {
+  width: 60%;
+  padding-bottom: 60px;
+}
+
+footer {
+  text-align: center;
+}
+
+footer h1 {
+  text-shadow: none;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  border: 2px solid #9b8e8e;
+  font-family:var(--mainFont);
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  border: 2px solid #a26769;
+}
+
+
+.hideme {
+    opacity:0;
+}
