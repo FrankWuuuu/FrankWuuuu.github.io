@@ -3,17 +3,27 @@
 Section AD Tara
 
 css file styles all the elements in the index.html file */
-:root {
-  --color-light: #F7F5ED;
+/* :root {
+  --color-backgroud: #fff9ed;
   --color-mid: #FFBF9B;
   --color-highlight: #B46060;
-  --color-dark: #5e5e5e;
+  --color-text: #5e5e5e;
+  --color-card: #cebec2;
   --: 'Noto Serif JP', serif;
+} */
+
+:root {
+  --color-backgroud: #121212;
+  --color-mid: #ffe4d2;
+  --color-highlight: #B46060;
+  --color-text: #c3c3c3;
+  --color-card: #121212;
+  --mainFont:  'Alegreya', serif;
 }
 body {
   margin: 0px;
-  background-color: var(--color-light);
-  color: var(--color-dark);
+  background-color: var(--color-backgroud);
+  color: var(--color-text);
 }
 
 .black-background {
@@ -25,7 +35,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family:var(--mainFont);
+  /* font-family:var(--mainFont); */
   font-weight: 500;
 }
 
@@ -36,15 +46,15 @@ h4 {
   width: 80%;
 }
 
-#work,
+/* #work,
 #hobbies {
-  /* padding-top: 15vh; */
-}
+  padding-top: 15vh;
+} */
 
 #work,
 #skills,
 #hobbies {
-  padding-bottom: 15vh;
+  padding-bottom: 5vh;
 }
 
 #work > section,
@@ -94,29 +104,64 @@ header {
   align-items: center;
 }
 
-h1 {
+header section{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  /* flex-direction: row; */
+  /* width: 20%; */
+}
+
+header section div {
+  margin: 10px 10px 10px 20px;
+}
+
+header section svg {
+  fill: #fff;
+}
+
+header section svg:hover {
+  fill: var(--color-backgroud);
+}
+
+header p {
   /* color: #d5b9b2; */
   color: var(--color-mid);
-  font-family: var(--mainFont);
-  font-size: 40px;
-  text-shadow: 1px 1px 5px #000000;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 50px;
+  text-shadow: 1px 1px 8px #000000;
 }
 
 #work > section > section,
 #skills > section > section {
-  padding: 40px;
-  width: 33%;
-  background-color: #cebebe;
-  margin: 50px;
+  background-color: var(--color-card);
   border-radius: 3px;
 }
 
+#skills >section {
+  width: 80%;
+}
+
+#skills > section > section {
+  margin: auto;
+  width: 33%;
+}
+
 #work > section > section{
+  margin: 50px;
+  padding: 40px;
   width: 40%;
 }
 
 #work > section > section > img{
   width: 30%;
+}
+
+.work-subtitle {
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 #work-section,
@@ -129,23 +174,38 @@ h1 {
 
 
 #hobbies > section > section {
-  width: 40%;
+  width: 60%;
   align-items: center;
-  background-color: #cebebe;
-  margin: 20px;
+  background-color: var(--color-card);
+  margin: 50px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center ;
   transition-duration: 0.4s;
 }
 
-#hobbies > section > section > img {
+#my-music {
+  margin: auto;
+  width: 40%;
+  flex-direction: column;
+  margin-bottom: 120px;
+}
+
+#my-music img{
   width: 100%;
+}
+
+#hobbies > section > section > img,
+#hobbies > section > section > iframe {
+  width: 46%;
   transition-duration: 0.4s;
+  border-radius: 2px;
 }
 
 #hobbies > section > section > section {
-  padding: 7%;
-  width: 86%;
+  /* padding: 4%; */
+  width: 46%;
   align-items: center;
   /* background-color: #cebebe; */
   display: flex;
@@ -200,6 +260,7 @@ footer {
 footer h1 {
   text-shadow: none;
   cursor: pointer;
+  color: var(--color-highlight);
 }
 
 html {
@@ -218,6 +279,10 @@ button {
 
 button:hover {
   border: 2px solid #a26769;
+}
+
+.hidden {
+  display: none;
 }
 
 

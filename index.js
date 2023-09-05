@@ -37,8 +37,10 @@
         " encrypted-media; gyroscope; picture-in-picture; web-share";
       vid.allowFullscreen = true;
       const wushu = id("wushu");
-      wushu.appendChild(vid);
+      wushu.prepend(vid);
       qs("button").textContent = "Hide";
+      qs("#wushu img").classList.add("hidden")
+      $(qs("#wushu img")).stop().animate({ 'opacity': '0' }, 0);
       wushu.classList.add("make-wider");
 
     } else {
@@ -47,6 +49,8 @@
       const wushu = id("wushu");
       wushu.removeChild(qs("iframe"));
       wushu.classList.remove("make-wider");
+      qs("#wushu img").classList.remove("hidden")
+      $(qs("#wushu img")).stop().animate({ 'opacity': '1' }, 800);
     }
   }
 
@@ -76,30 +80,56 @@
 
 
 
-$(function(){  // $(document).ready shorthand
-  $('.monster').fadeIn('slow');
-});
+// $(function(){  // $(document).ready shorthand
+//   $('.monster').fadeIn('slow');
+// });
+
+// $(document).ready(function() {
+
+//     /* Every time the window is scrolled ... */
+//     $(window).scroll( function(){
+
+//         /* Check the location of each desired element */
+//         $('.hideme').each( function(i){
+
+//             var bottom_of_object = $(this).position().top + $(this).outerHeight()/2;
+//             var bottom_of_window = $(window).scrollTop() + $(window).height();
+//             console.log(this)
+
+//             /* If the object is completely visible in the window, fade it it */
+//             if( bottom_of_window > bottom_of_object ){
+
+//                 $(this).animate({'opacity':'1'},800);
+//             }
+
+//         });
+
+//     });
+
+// });
+
 
 $(document).ready(function() {
-    
-    /* Every time the window is scrolled ... */
-    $(window).scroll( function(){
-    
-        /* Check the location of each desired element */
-        $('.hideme').each( function(i){
-            
-            var bottom_of_object = $(this).position().top + $(this).outerHeight()/2;
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-            
-            /* If the object is completely visible in the window, fade it it */
-            if( bottom_of_window > bottom_of_object ){
-                
-                $(this).animate({'opacity':'1'},800);
-                    
-            }
-            
-        }); 
-    
-    });
-    
+  $('.monster').fadeIn('slow');
+
+  /* Throttle the scroll event to limit execution frequency */
+  var throttleTimer;
+  $(window).on('scroll', function() {
+      clearTimeout(throttleTimer);
+      throttleTimer = setTimeout(checkElementsVisibility, 250);
+  });
+
+  function checkElementsVisibility() {
+      $('.hideme').each(function(i) {
+          var bottom_of_object = $(this).position().top + $(this).outerHeight() / 3;
+          var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+          if (bottom_of_window > bottom_of_object) {
+              $(this).stop().animate({ 'opacity': '1' }, 800);
+          }
+      });
+  }
+
+  // Initial check when the page loads
+  checkElementsVisibility();
 });
