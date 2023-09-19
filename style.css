@@ -14,11 +14,12 @@ css file styles all the elements in the index.html file */
 
 :root {
   --color-backgroud: #121212;
-  --color-mid: #ffe4d2;
+  --color-mid: #e09a6b;
   --color-highlight: #B46060;
   --color-text: #c3c3c3;
   --color-card: #121212;
   --mainFont:  'Alegreya', serif;
+  --bigFont:  'Playfair Display', serif;
 }
 body {
   margin: 0px;
@@ -38,6 +39,9 @@ h4 {
   /* font-family:var(--mainFont); */
   font-weight: 500;
 }
+
+
+
 
 #about-me,
 #work,
@@ -129,9 +133,10 @@ header section svg:hover {
 header p {
   /* color: #d5b9b2; */
   color: var(--color-mid);
-  font-family: 'Libre Baskerville', serif;
+  /* font-family: 'Libre Baskerville', serif; */
+  font-family: var(--bigFont);
   font-size: 50px;
-  text-shadow: 1px 1px 8px #000000;
+  text-shadow: 1px 1px 8px #281203;
 }
 
 #work > section > section,
@@ -182,15 +187,21 @@ header p {
   flex-direction: row;
   justify-content: space-between;
   align-items: center ;
-  transition-duration: 0.4s;
+  /* transition-duration: 0.4s; */
 }
 
-#my-music {
+#my-music, .extra {
   margin: auto;
   width: 40%;
   flex-direction: column;
   margin-bottom: 120px;
 }
+
+.extra img {
+  width: 60%;
+  margin-left: 20%;
+}
+
 
 #my-music img{
   width: 100%;
@@ -248,10 +259,10 @@ iframe {
   border: 0px;
 }
 
-#hobbies > section > .make-wider {
+/* #hobbies > section > .make-wider {
   width: 60%;
   padding-bottom: 60px;
-}
+} */
 
 footer {
   text-align: center;
@@ -268,17 +279,19 @@ html {
 }
 
 button {
-  border: 2px solid #9b8e8e;
+  border: 2px solid #fff;
   font-family:var(--mainFont);
   font-size: 1rem;
+  padding: 5px;
   background-color: white;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 3px;
   transition-duration: 0.4s;
 }
 
 button:hover {
-  border: 2px solid #a26769;
+  border: 2px solid var(--color-highlight);
+  transition-duration: 0.4s;
 }
 
 .hidden {

@@ -41,14 +41,14 @@
       qs("button").textContent = "Hide";
       qs("#wushu img").classList.add("hidden")
       $(qs("#wushu img")).stop().animate({ 'opacity': '0' }, 0);
-      wushu.classList.add("make-wider");
+      // wushu.classList.add("make-wider");
 
     } else {
       wushuVideoAdded = false;
       qs("button").textContent = "Watch me on Youtube!";
       const wushu = id("wushu");
       wushu.removeChild(qs("iframe"));
-      wushu.classList.remove("make-wider");
+      // wushu.classList.remove("make-wider");
       qs("#wushu img").classList.remove("hidden")
       $(qs("#wushu img")).stop().animate({ 'opacity': '1' }, 800);
     }
