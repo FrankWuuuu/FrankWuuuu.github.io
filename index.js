@@ -54,6 +54,21 @@
     }
   }
 
+
+  window.toggleTrimbleText =  function toggleTrimbleText() {
+    const content = id("trimble_text");
+    const button = document.querySelector(".read-more");
+    if (content.classList.contains("expanded")) {
+        content.classList.remove("expanded");
+        button.innerText = "Read More";
+    } else {
+        content.classList.add("expanded");
+        button.innerText = "Read Less";
+    }
+}
+
+
+
   /**
    * returns the element of the given id
    * @param {string} id - the id to find the element of

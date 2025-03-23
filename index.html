@@ -50,10 +50,10 @@ HTML file creates the content and structure of the webpage -->
     <section>
       <section id="about-me" class="hideme">
         <section>
-          <img src="img/one.jpg" alt="A picture of me">
+          <img src="img/profileone.jpg" alt="A picture of me" >
         </section>
         <section id="about-me-text">
-          <h2>About Me</h2>
+          <h2>Hello!</h2>
           <p>
             Hi! I'm Frank Wu, a student at the University of
             Washington studying Computer Science. My hometown is Vancouver WA.
@@ -76,28 +76,69 @@ HTML file creates the content and structure of the webpage -->
       <section id="work">
         <h2 class="hideme">Work and Projects</h2>
         <section id="work-section">
+
+          <section class="hideme">
+            <section class="trimble_content" id="trimble_text">
+              <img src="img/trimble_logo.png" alt="wushu logo">
+              <h3>Trimble</h3>
+              <p class="work-subtitle">Machine Learning Intern &emsp; <em> 2022</em></p>
+              <p>
+                Summer after sophmore year, I had the chance to work on LOLA (Learned inertial Odometry, Localization, and AI), 
+                a Machine Learning Odometry project at Trimble in
+                Paris and Nantes, France. My work was in training machine learning models with IMU sensor data to
+                reconstruct the paths of moving objects.
+              </p>
+              <p>
+                IMUs are sensors that measure acceleration and angular velocity (rotation), and are used as back up in sensor systems.
+                Theoretically, after holding an IMU and moving around, one could recreate their path using only the IMU data.
+                However IMU data is noisy, so converting raw data into a path is difficult. Our goal was to replace unreliable physics 
+                based algorithms for path reconstruction with a deep learning algorithm, namely Resnet.
+              </p>
+              <p>
+                Resnet is a classic machine lerning model originally created for image recognition. Based on the work of TLIO (a state of the art
+                IMU odometry project), I reimplemented Resnet to work with IMU data. Particularly, replacing 2D convolutions with 1D ones, Resnet
+                was made to work over a singular time dimension instead of an image's two spatial dimensions.
+              </p>
+              <p>
+                To train this model, I found seven IMU datasets from Trimble and academia. After some converting and post processing, I experimented
+                with various mixed and transfer learning regimes. The difficulty with different training regimes is each dataset is full of biases
+                based on the particular model of IMU the datasets were created from. If the model is trained to learn the tendencies of a particular
+                IMU model, and is then tested on a different IMU model, the mismatch causes inaccuracies. I discovered that pretraining
+                on all the datasets to learn general features of movement, then fine tuning on data from the desired IMU model, produced the most
+                accurate predictions.
+              </p>
+              <p>
+                Ultimately, I was able to acheive a model that took more than thirty seconds to drift more than half a meter, equivalent to about less
+                than 2% total drift, after about 200 epochs of training on the seven datasets.
+              </p>
+
+              <p><em>Pytorch, Numpy, </em></p>
+            </section>
+            <span class="read-more" onclick="toggleTrimbleText()">Read More</span>
+          </section>
+
           <section class="hideme">
             <img src="img/competitionKing.png" alt="wushu logo">
             <h3>Competition King</h3>
-            <p class="work-subtitle">Front-end developer &emsp; <em> Present</em></p>
+            <p class="work-subtitle">Front-end developer &emsp; <em> 2023</em></p>
             <p>
-              My martial arts coach was sick of using spreadsheets to host an annual wushu tornament,
-              so we decided to build a website that could host
-              and manage the competition.
+              Using spreadsheets to organize the local annual wushu tornament was a logistical nightmare,
+              so we decided to build a website that could host and manage the competition ourselves.
             </p>
             <p>
               As the main front-end developer of the
-              project, <em>Competition King</em>, I've been building the
+              project, <em>Competition King</em>, I've developed the
               website using React while collaborating with UX designers and
-              back-end developers. 
+              back-end developers.
             </p>
             <p>
               Our goal is to have our website used in the 2023 Collegiate Wushu Tornament
-              and 10th Seattle International Martial Arts Championship, and eventually scale the project so that 
+              and 10th Seattle International Martial Arts Championship, and eventually scale the project so that
               it can be used to host any martial arts tornament.
             </p>
             <p><em>React, Typescript, HTML/CSS</em></p>
           </section>
+
           <section class="hideme">
             <img src="img/hp.png" alt="hp logo">
             <h3>Intern at HP Inc.</h3>
@@ -106,17 +147,15 @@ HTML file creates the content and structure of the webpage -->
               I worked on an information gathering web application to consolidate printer data for other
               HP developers. We implemented the backend using Django and the frontend using Reactjs.
             </p>
-            <p>
-              I collaborated with various employees and interns around the world under a scrum process.
-            </p>
             <p><em>Django, React</em></p>
           </section>
 
           <section class="hideme">
             <img src="img/tft.png" alt="tft logo">
             <h3 class="work-subtitle">TFT Web Scraper & Web App</h3>
+            <p>2022</p>
             <p>
-              Last summer, I built a web application that summarized the best strategies for the online game TeamFight Tactics (TFT). I used Selenium as a web scraper 
+              I built a web application that summarized the best strategies for the online game TeamFight Tactics (TFT). I used Selenium as a web scraper 
               to collect data from various TFT strategy blog websites, and processed the data into one summarizing TierList. Then, using Django and 
               React, I built a web application to present these findings. 
             </p>
